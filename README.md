@@ -37,7 +37,19 @@ npm run e2e        # 実 Chromium に拡張を読み込んで E2E 確認（Playw
 
 Chrome で `chrome://extensions` →「デベロッパーモード」→「パッケージ化されていない拡張機能を読み込む」で `dist/` を選択します。
 
-アイコン画像は `npm run icons` で `public/icons/` に再生成できます（オリジナル図案）。
+```bash
+npm run zip        # ビルドしてストア提出用の tabmerge-<version>.zip を作成
+```
+
+```bash
+npm run store-images   # ストア用スクリーンショット・プロモーション画像を store/assets/ に生成（Playwright が必要）
+```
+
+アイコンは `assets/brand/logo.png` から `npm run icons` で `public/icons/` に再生成できます（Python + Pillow が必要）。
+
+## Chrome ウェブストア公開
+
+掲載用の説明文・権限の説明・プライバシー項目の記入例は [store/listing.ja.md](store/listing.ja.md) / [store/listing.en.md](store/listing.en.md)、画像は `store/assets/{ja,en}/` にあります。
 
 ## 構成
 
@@ -58,6 +70,8 @@ src/i18n/                    UI 文言（日本語・英語）
 tests/                       ユニットテスト
 e2e/run.mjs                  ブラウザ E2E
 docs/                        プライバシーポリシー（日・英）
+assets/brand/                ロゴ原画
+store/                       ストア掲載文・画像と生成スクリプト
 ```
 
 ## 設計上のポイント
@@ -110,4 +124,4 @@ v1 は **ブラウザから取得した URL 文字列の完全一致**。フラ�
 
 ## ライセンス
 
-未定（公開前に決定してください）。
+[MIT License](LICENSE)
