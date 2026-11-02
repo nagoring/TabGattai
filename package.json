@@ -10,8 +10,10 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "icons": "node scripts/generate-icons.mjs",
-    "e2e": "vite build --mode e2e --outDir dist-e2e && node e2e/run.mjs dist-e2e"
+    "icons": "python3 scripts/generate-icons.py",
+    "e2e": "vite build --mode e2e --outDir dist-e2e && node e2e/run.mjs dist-e2e",
+    "zip": "npm run build && rm -f tabmerge-$npm_package_version.zip && cd dist && zip -qr ../tabmerge-$npm_package_version.zip . && cd .. && echo Created tabmerge-$npm_package_version.zip",
+    "store-images": "vite build --mode e2e --outDir dist-e2e && node store/generate.mjs dist-e2e"
   },
   "devDependencies": {
     "@types/chrome": "^0.3.7",
@@ -25,5 +27,6 @@
   "dependencies": {
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
-  }
+  },
+  "license": "MIT"
 }
