@@ -1,0 +1,5 @@
+{
+  "extName": { "message": "TabMerge - Save & merge tabs" },
+  "extDescription": { "message": "Save all open tabs with one click and restore them later. Duplicate URLs are automatically moved to the newest saved group. Data stays in your browser." },
+  "actionTitle": { "message": "Save this window's tabs to TabMerge" }
+}

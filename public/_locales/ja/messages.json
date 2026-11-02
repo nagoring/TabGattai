@@ -1,0 +1,5 @@
+{
+  "extName": { "message": "TabMerge - タブをまとめて保存" },
+  "extDescription": { "message": "開いているタブをワンクリックで保存・復元。重複したURLは最新の保存グループへ自動でまとめます。データはブラウザ内にのみ保存。" },
+  "actionTitle": { "message": "このウィンドウのタブを TabMerge に保存" }
+}
