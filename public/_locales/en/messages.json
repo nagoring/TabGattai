@@ -1,5 +1,5 @@
 {
-  "extName": { "message": "TabMerge - Save & merge tabs" },
+  "extName": { "message": "TabGattai - Save & merge tabs" },
   "extDescription": { "message": "Save all tabs in one click and restore them later. Duplicate URLs move to your newest group. Data stays in your browser." },
-  "actionTitle": { "message": "Save this window's tabs to TabMerge" }
+  "actionTitle": { "message": "Save this window's tabs to TabGattai" }
 }

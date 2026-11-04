@@ -5,7 +5,7 @@ Text to paste into the Developer Dashboard (English localization).
 ## Store listing
 
 **Item name** (taken from `extName` in the manifest)
-TabMerge - Save & merge tabs
+TabGattai - Save & merge tabs
 
 **Summary** (`extDescription`, max 132 characters)
 Save all tabs in one click and restore them later. Duplicate URLs move to your newest group. Data stays in your browser.
@@ -15,12 +15,12 @@ Save all tabs in one click and restore them later. Duplicate URLs move to your n
 **Description**
 
 ```
-TabMerge saves all your open tabs in one click and lets you restore them whenever you need.
+TabGattai saves all your open tabs in one click and lets you restore them whenever you need.
 Great for when too many tabs slow your browser down, or when you want to put a task aside for later.
 
 ■ Key feature: duplicate URLs move to the newest group
 Saving the same page again never clutters your list.
-When you save a URL that is already saved, TabMerge removes it from the older group and moves it to the newest group.
+When you save a URL that is already saved, TabGattai removes it from the older group and moves it to the newest group.
 Older groups that become empty are deleted automatically, so your list stays tidy.
 
 ■ Features
@@ -71,7 +71,7 @@ A tab manager that saves and restores open tabs, merging duplicate URLs into the
 
 **Privacy policy URL**
 ```
-https://github.com/nagoring/tabmerge/blob/main/docs/privacy-policy.en.md
+https://github.com/nagoring/TabGattai/blob/main/docs/privacy-policy.en.md
 ```
 
 ## Images (`store/assets/en/`)

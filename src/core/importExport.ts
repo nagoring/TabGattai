@@ -3,7 +3,7 @@
  *
  * Export format (version 1):
  * {
- *   "format": "tabmerge-export",
+ *   "format": "tabgattai-export",
  *   "formatVersion": 1,
  *   "exportedAt": "2026-11-02T10:00:00.000Z",
  *   "groups": [
@@ -18,7 +18,9 @@ import { consolidateGroups } from './merge';
 import type { SavedTab, StoreData, TabGroup } from './types';
 import { isSavableUrl } from './url';
 
-export const EXPORT_FORMAT = 'tabmerge-export';
+export const EXPORT_FORMAT = 'tabgattai-export';
+/** Format name written before the rename from TabMerge; old backups must stay importable. */
+const LEGACY_EXPORT_FORMAT = 'tabmerge-export';
 export const EXPORT_FORMAT_VERSION = 1;
 
 export const IMPORT_LIMITS = Object.freeze({
@@ -67,7 +69,7 @@ export function buildExport(data: Pick<StoreData, 'groups'>, now: number = Date.
 export function exportFileName(now: number = Date.now()): string {
   const d = new Date(now);
   const p = (n: number) => String(n).padStart(2, '0');
-  return `tabmerge-${d.getFullYear()}${p(d.getMonth() + 1)}${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}.json`;
+  return `tabgattai-${d.getFullYear()}${p(d.getMonth() + 1)}${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}.json`;
 }
 
 export type ImportErrorCode = 'too-large' | 'invalid-json' | 'invalid-format' | 'unsupported-version' | 'too-many';
@@ -123,8 +125,8 @@ export function parseImport(text: string, existingIds: ReadonlySet<string> = new
   } catch {
     throw new ImportError('invalid-json', 'Not valid JSON');
   }
-  if (!isRecord(json) || json.format !== EXPORT_FORMAT || !Array.isArray(json.groups)) {
-    throw new ImportError('invalid-format', 'Not a TabMerge export file');
+  if (!isRecord(json) || (json.format !== EXPORT_FORMAT && json.format !== LEGACY_EXPORT_FORMAT) || !Array.isArray(json.groups)) {
+    throw new ImportError('invalid-format', 'Not a TabGattai export file');
   }
   if (typeof json.formatVersion !== 'number' || !Number.isInteger(json.formatVersion) || json.formatVersion < 1) {
     throw new ImportError('invalid-format', 'Missing format version');

@@ -1,7 +1,7 @@
 /** Current schema version of the persisted data (chrome.storage.local). */
 export const SCHEMA_VERSION = 1;
 
-/** A saved tab. `id` is a TabMerge-owned persistent ID (never Chrome's tabId). */
+/** A saved tab. `id` is a TabGattai-owned persistent ID (never Chrome's tabId). */
 export interface SavedTab {
   id: string;
   url: string;

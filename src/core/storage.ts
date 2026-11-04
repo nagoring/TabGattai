@@ -10,8 +10,9 @@ import { withLock } from './lock';
 import { sanitizeSettings } from './settings';
 import { SCHEMA_VERSION, createEmptyStore, type StoreData, type TabGroup } from './types';
 
+/** Kept from the former name TabMerge: changing it would orphan data already saved in chrome.storage.local. */
 export const STORAGE_KEY = 'tabmerge';
-const LOCK_NAME = 'tabmerge-store';
+const LOCK_NAME = 'tabgattai-store';
 
 /** Minimal key/value interface over chrome.storage.local (injectable for tests). */
 export interface StorageBackend {

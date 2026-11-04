@@ -182,7 +182,7 @@ export function App() {
         const text = await file.text();
         if (backupFirst) {
           const current = await store.read();
-          downloadJson(exportFileName().replace('tabmerge-', 'tabmerge-backup-'), buildExport(current));
+          downloadJson(exportFileName().replace('tabgattai-', 'tabgattai-backup-'), buildExport(current));
         }
         const r = await importJson(store, text);
         toast(t('importDone', { groups: r.stats.groups, tabs: r.stats.tabs, before: r.totalBefore, after: r.totalAfter }));

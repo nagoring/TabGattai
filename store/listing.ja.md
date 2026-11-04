@@ -5,7 +5,7 @@
 ## ストアの掲載情報
 
 **アイテム名**（manifest の `extName` から自動で入ります）
-TabMerge - タブをまとめて保存
+TabGattai - タブをまとめて保存
 
 **概要**（manifest の `extDescription`、132文字以内）
 開いているタブをワンクリックで保存・復元。重複したURLは最新の保存グループへ自動でまとめます。データはブラウザ内にのみ保存。
@@ -16,7 +16,7 @@ TabMerge - タブをまとめて保存
 **説明**
 
 ```
-TabMerge は、開いているタブをワンクリックでまとめて保存し、必要なときに復元できるシンプルなタブ管理ツールです。
+TabGattai は、開いているタブをワンクリックでまとめて保存し、必要なときに復元できるシンプルなタブ管理ツールです。
 タブを開きすぎてブラウザが重くなったとき、作業をいったん区切りたいときに便利です。
 
 ■ 最大の特徴：重複URLは最新のグループへ自動で移動
@@ -75,7 +75,7 @@ TabMerge は、開いているタブをワンクリックでまとめて保存�
 
 **プライバシーポリシーの URL**
 ```
-https://github.com/nagoring/tabmerge/blob/main/docs/privacy-policy.ja.md
+https://github.com/nagoring/TabGattai/blob/main/docs/privacy-policy.ja.md
 ```
 （リポジトリが公開されている必要があります。非公開の場合は GitHub Pages などで公開してください）
 

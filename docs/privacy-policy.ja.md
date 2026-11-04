@@ -1,8 +1,8 @@
-# TabMerge プライバシーポリシー
+# TabGattai プライバシーポリシー
 
 最終更新日: 2026年11月2日
 
-TabMerge（以下「本拡張機能」）は、Google Chrome 用のタブ管理拡張機能です。本ポリシーは、本拡張機能が取り扱う情報とその取り扱い方法を説明します。
+TabGattai（以下「本拡張機能」）は、Google Chrome 用のタブ管理拡張機能です。本ポリシーは、本拡張機能が取り扱う情報とその取り扱い方法を説明します。
 
 ## 1. 取り扱う情報
 
@@ -66,4 +66,4 @@ TabMerge（以下「本拡張機能」）は、Google Chrome 用のタブ管理�
 ## 9. お問い合わせ
 
 本ポリシーに関するお問い合わせは、GitHub リポジトリの Issues からお願いします。
-https://github.com/nagoring/tabmerge/issues
+https://github.com/nagoring/TabGattai/issues

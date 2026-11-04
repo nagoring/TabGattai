@@ -5,7 +5,7 @@
  * - The duplicate key used for "latest wins" merging.
  */
 
-/** Schemes that TabMerge saves and is willing to open. Everything else (javascript:, data:, chrome:, ...) is rejected. */
+/** Schemes that TabGattai saves and is willing to open. Everything else (javascript:, data:, chrome:, ...) is rejected. */
 const ALLOWED_PROTOCOLS = new Set(['http:', 'https:', 'file:']);
 
 /** Upper bound for a stored URL; protects storage from absurd input. */
@@ -27,7 +27,7 @@ export function isSavableUrl(url: unknown): url is string {
 }
 
 /**
- * True when the URL may be opened from TabMerge.
+ * True when the URL may be opened from TabGattai.
  * Same allow-list as saving: dangerous schemes such as javascript:, data:, vbscript:, blob:,
  * chrome:, chrome-extension: are refused.
  */
