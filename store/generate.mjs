@@ -41,7 +41,7 @@ const DEMO = {
         ['https://docs.example.dev/chrome/extensions/manifest-v3', 'Manifest V3 への移行ガイド'],
         ['https://qa.example.dev/questions/12345/storage-local-quota', 'chrome.storage.local の容量制限について - Q&A'],
         ['https://blog.example.jp/posts/react-19-features', 'React 19 の新機能まとめ'],
-        ['https://tracker.example.io/projects/tabmerge/issues/42', '#42 インポート時の重複統合 · Issue Tracker'],
+        ['https://tracker.example.io/projects/tabgattai/issues/42', '#42 インポート時の重複統合 · Issue Tracker'],
       ],
       [
         ['https://news.example.jp/tech/2026/11/02', '今日のテックニュース 11月2日'],
@@ -79,7 +79,7 @@ const DEMO = {
         ['https://docs.example.dev/chrome/extensions/manifest-v3', 'Migrating to Manifest V3'],
         ['https://qa.example.dev/questions/12345/storage-local-quota', 'What is the chrome.storage.local quota? - Q&A'],
         ['https://blog.example.jp/posts/react-19-features', "What's new in React 19"],
-        ['https://tracker.example.io/projects/tabmerge/issues/42', '#42 Merge duplicates on import · Issue Tracker'],
+        ['https://tracker.example.io/projects/tabgattai/issues/42', '#42 Merge duplicates on import · Issue Tracker'],
       ],
       [
         ['https://news.example.jp/tech/2026/11/02', 'Tech news today — Nov 2'],
@@ -116,7 +116,7 @@ for (const d of Object.values(DEMO)) for (const g of d.groups) for (const [u, t]
 let currentLang = 'ja';
 
 function startServer() {
-  const dir = mkdtempSync(join(tmpdir(), 'tabmerge-cert-'));
+  const dir = mkdtempSync(join(tmpdir(), 'tabgattai-cert-'));
   execFileSync('openssl', ['req', '-x509', '-newkey', 'rsa:2048', '-nodes', '-days', '1', '-subj', '/CN=example',
     '-keyout', join(dir, 'key.pem'), '-out', join(dir, 'cert.pem')], { stdio: 'ignore' });
   const server = createServer({ key: readFileSync(join(dir, 'key.pem')), cert: readFileSync(join(dir, 'cert.pem')) }, (req, res) => {
@@ -203,7 +203,7 @@ function promoSmall(d) {
     body{font-family:${FONT};background:linear-gradient(150deg,#e9f2ff,#c4dbff);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#0f2a55}
     img{width:120px;height:120px} h1{margin:6px 0 4px;font-size:40px;font-weight:800}
     p{margin:0;font-size:16px;font-weight:600;opacity:.85}
-  </style><img src="${logoSrc}"><h1>TabMerge</h1><p>${esc(d.tagline)}</p>`;
+  </style><img src="${logoSrc}"><h1>TabGattai</h1><p>${esc(d.tagline)}</p>`;
 }
 
 function promoMarquee(d, shotB64) {
@@ -216,7 +216,7 @@ function promoMarquee(d, shotB64) {
     ul{margin:0;padding:0;list-style:none;font-size:20px;line-height:1.9} li::before{content:'✓  ';color:#1a73e8;font-weight:800}
     .shot{position:absolute;left:660px;top:70px;width:900px;border-radius:14px;overflow:hidden;box-shadow:0 18px 50px rgba(15,40,90,.3)}
     .shot img{display:block;width:100%}
-  </style><div class="text"><div class="brand"><img src="${logoSrc}"><h1>TabMerge</h1></div>
+  </style><div class="text"><div class="brand"><img src="${logoSrc}"><h1>TabGattai</h1></div>
   <p class="t">${esc(d.tagline)}</p><ul>${d.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul></div>
   <div class="shot"><img src="data:image/png;base64,${shotB64}"></div>`;
 }
@@ -227,7 +227,7 @@ async function generate(lang, port) {
   const d = DEMO[lang];
   const outDir = join(outRoot, lang);
   mkdirSync(outDir, { recursive: true });
-  const profile = mkdtempSync(join(tmpdir(), 'tabmerge-store-'));
+  const profile = mkdtempSync(join(tmpdir(), 'tabgattai-store-'));
   const ctx = await chromium.launchPersistentContext(profile, {
     headless: true,
     channel: 'chromium',
@@ -257,7 +257,7 @@ async function generate(lang, port) {
       await new Promise((r) => setTimeout(r, 800)); // let favicons land in Chrome's cache
       await sw.evaluate(async () => {
         const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
-        await globalThis.__tabmergeE2E.onActionClicked(tab);
+        await globalThis.__tabgattaiE2E.onActionClicked(tab);
       });
       await new Promise((r) => setTimeout(r, 300));
     }

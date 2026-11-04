@@ -1,5 +1,5 @@
 /**
- * TabMerge service worker.
+ * TabGattai service worker.
  *
  * Stateless by design: every event reads what it needs from chrome.storage.local, so the
  * worker can be stopped and restarted by Chrome at any time. Listeners are registered
@@ -57,7 +57,7 @@ async function onActionClicked(tab: chrome.tabs.Tab): Promise<void> {
     }
     await chrome.action.setBadgeText({ text: '' });
   } catch (e) {
-    console.error('[TabMerge] save failed', e);
+    console.error('[TabGattai] save failed', e);
     await chrome.action.setBadgeBackgroundColor({ color: '#c62828' }).catch(() => undefined);
     await chrome.action.setBadgeText({ text: '!' }).catch(() => undefined);
     await showManager(windowId, 'error').catch(() => undefined);
@@ -70,5 +70,5 @@ chrome.action.onClicked.addListener((tab) => {
 
 // Test hook for end-to-end tests only (`vite build --mode e2e`); removed from production builds.
 if (import.meta.env.MODE === 'e2e') {
-  (globalThis as Record<string, unknown>).__tabmergeE2E = { onActionClicked };
+  (globalThis as Record<string, unknown>).__tabgattaiE2E = { onActionClicked };
 }

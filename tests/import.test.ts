@@ -20,6 +20,11 @@ describe('export', () => {
     expect(Object.keys(out.groups[0]!.tabs[0]!).sort()).toEqual(['id', 'savedAt', 'title', 'url']);
   });
 
+  it('still imports backups written under the former format name', () => {
+    const text = JSON.stringify({ format: 'tabmerge-export', formatVersion: 1, groups: [g('g1', '2026-11-01T00:00:00.000Z', [{ url: 'https://a.com/' }])] });
+    expect(urlsOf(parseImport(text).groups[0])).toEqual(['https://a.com/']);
+  });
+
   it('round-trips through import', async () => {
     const { store } = newStore();
     const text = JSON.stringify(buildExport({ groups: [group('g1', NOW - 10, ['https://a.com/', 'https://b.com/'], 'X')] }));

@@ -1,4 +1,4 @@
-/** Generates TabMerge persistent IDs (UUID v4). */
+/** Generates TabGattai persistent IDs (UUID v4). */
 export function newId(): string {
   if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
     return crypto.randomUUID();

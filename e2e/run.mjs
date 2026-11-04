@@ -17,7 +17,7 @@ const server = createServer((req, res) => {
 const port = server.address().port;
 const u = (p) => `http://127.0.0.1:${port}${p}`;
 
-const profile = mkdtempSync(join(tmpdir(), 'tabmerge-e2e-'));
+const profile = mkdtempSync(join(tmpdir(), 'tabgattai-e2e-'));
 let failures = 0;
 const check = (cond, msg) => {
   console.log(`${cond ? 'ok  ' : 'FAIL'} ${msg}`);
@@ -48,7 +48,7 @@ async function clickAction(ctx) {
   const [sw] = ctx.serviceWorkers().length ? ctx.serviceWorkers() : [await ctx.waitForEvent('serviceworker')];
   await sw.evaluate(async () => {
     const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
-    await globalThis.__tabmergeE2E.onActionClicked(tab);
+    await globalThis.__tabgattaiE2E.onActionClicked(tab);
   });
   return sw;
 }
@@ -111,7 +111,7 @@ try {
   const mgr3 = await findManager(ctx);
   await mgr3.waitForSelector('.toast');
   check((await mgr3.locator('.group').count()) === 2, 'no empty group created when nothing to save');
-  await mgr3.screenshot({ path: join(process.env.E2E_SHOTS ?? tmpdir(), 'tabmerge-dark-en.png'), fullPage: true });
+  await mgr3.screenshot({ path: join(process.env.E2E_SHOTS ?? tmpdir(), 'tabgattai-dark-en.png'), fullPage: true });
 
   // Restart: data persists
   await ctx.close();

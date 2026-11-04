@@ -1,8 +1,8 @@
-# TabMerge Privacy Policy
+# TabGattai Privacy Policy
 
 Last updated: November 2, 2026
 
-TabMerge ("the extension") is a tab management extension for Google Chrome. This policy explains what information the extension handles and how.
+TabGattai ("the extension") is a tab management extension for Google Chrome. This policy explains what information the extension handles and how.
 
 ## 1. Information handled
 
@@ -66,4 +66,4 @@ If this policy changes, this page will be updated together with the "Last update
 ## 9. Contact
 
 Please use the Issues page of the GitHub repository:
-https://github.com/nagoring/tabmerge/issues
+https://github.com/nagoring/TabGattai/issues

@@ -11,7 +11,7 @@ import type { Store } from './storage';
 import type { SavedTab, Settings, StoreData, TabGroup } from './types';
 import { isSafeToOpen, isSavableUrl } from './url';
 
-/** The subset of a chrome.tabs.Tab TabMerge needs. */
+/** The subset of a chrome.tabs.Tab TabGattai needs. */
 export interface BrowserTab {
   id?: number;
   index: number;
@@ -33,7 +33,7 @@ export interface TabsApi {
 
 export interface SaveOptions {
   windowId: number;
-  /** URL prefix of TabMerge's own pages; such tabs are never saved nor closed. */
+  /** URL prefix of TabGattai's own pages; such tabs are never saved nor closed. */
   ownPagePrefix: string;
   now?: number;
   /**
@@ -47,7 +47,7 @@ export type SaveResult =
   | { status: 'saved'; group: TabGroup; closedCount: number; movedCount: number }
   | { status: 'empty' };
 
-/** Returns the URL TabMerge would save for a tab, or null if the tab is not a save target. */
+/** Returns the URL TabGattai would save for a tab, or null if the tab is not a save target. */
 export function saveTargetUrl(tab: BrowserTab, settings: Settings, ownPagePrefix: string): string | null {
   if (tab.incognito) return null; // Incognito is not supported in v1.
   if (tab.pinned && !settings.includePinned) return null;
@@ -56,7 +56,7 @@ export function saveTargetUrl(tab: BrowserTab, settings: Settings, ownPagePrefix
   return isSavableUrl(url) ? url : null;
 }
 
-const SAVE_LOCK = 'tabmerge-save';
+const SAVE_LOCK = 'tabgattai-save';
 
 /**
  * Saves the tabs of a window as a new group and closes them.

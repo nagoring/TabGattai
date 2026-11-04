@@ -1,5 +1,5 @@
 {
-  "name": "tabmerge",
+  "name": "tabgattai",
   "version": "1.0.0",
   "private": true,
   "description": "Save and restore tabs with latest-wins duplicate URL merging (Chrome extension, Manifest V3).",
@@ -12,7 +12,7 @@
     "test:watch": "vitest",
     "icons": "python3 scripts/generate-icons.py",
     "e2e": "vite build --mode e2e --outDir dist-e2e && node e2e/run.mjs dist-e2e",
-    "zip": "npm run build && rm -f tabmerge-$npm_package_version.zip && cd dist && zip -qr ../tabmerge-$npm_package_version.zip . && cd .. && echo Created tabmerge-$npm_package_version.zip",
+    "zip": "npm run build && rm -f tabgattai-$npm_package_version.zip && cd dist && zip -qr ../tabgattai-$npm_package_version.zip . && cd .. && echo Created tabgattai-$npm_package_version.zip",
     "store-images": "vite build --mode e2e --outDir dist-e2e && node store/generate.mjs dist-e2e"
   },
   "devDependencies": {

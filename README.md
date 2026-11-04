@@ -1,4 +1,4 @@
-# TabMerge
+# TabGattai
 
 開いているタブをワンクリックでまとめて保存し、必要なときに復元できる Chrome 拡張機能（Manifest V3）です。
 
@@ -38,7 +38,7 @@ npm run e2e        # 実 Chromium に拡張を読み込んで E2E 確認（Playw
 Chrome で `chrome://extensions` →「デベロッパーモード」→「パッケージ化されていない拡張機能を読み込む」で `dist/` を選択します。
 
 ```bash
-npm run zip        # ビルドしてストア提出用の tabmerge-<version>.zip を作成
+npm run zip        # ビルドしてストア提出用の tabgattai-<version>.zip を作成
 ```
 
 ```bash
